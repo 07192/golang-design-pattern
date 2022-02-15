@@ -1,0 +1,1 @@
+simplefactory包中只有greater接口和NewGreater方法对外开放。
