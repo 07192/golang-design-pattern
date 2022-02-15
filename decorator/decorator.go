@@ -1,24 +1,28 @@
 package decorator
 
-type Draw interface {
-	Draw()
+type pizza interface {
+	GetPrice() int
 }
 
-type Line struct{}
-
-func (l Line) Draw() string {
-	return "draw a line"
+type Pizza struct {
 }
 
-type ColorLine struct {
-	Line
-	color string
+func (b Pizza) GetPrice() int {
+	return 10
 }
 
-func (cl ColorLine) Draw() string {
-	return cl.Line.Draw() + ", paint " + cl.color
+type TomatoPizza struct {
+	pizza
 }
 
-func NewColorLine(color string) ColorLine {
-	return ColorLine{Line{}, color}
+func (tp TomatoPizza) GetPrice() int {
+	return tp.pizza.GetPrice() + 5
+}
+
+type BeefPizza struct {
+	pizza
+}
+
+func (bp BeefPizza) GetPrice() int {
+	return bp.pizza.GetPrice() + 10
 }

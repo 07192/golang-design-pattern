@@ -1,5 +1,7 @@
 # Go 语言设计模式
 
+[![Build Status]]
+
 ## 创建型模式
 - [单例模式](singleton/singleton.md)
 

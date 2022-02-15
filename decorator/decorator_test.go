@@ -6,9 +6,10 @@ import (
 )
 
 func TestDecorator(t *testing.T) {
-	painter := NewColorLine("red")
-	picture := painter.Line.Draw()
-	picture2 := painter.Draw()
-	fmt.Println(picture)
-	fmt.Println(picture2)
+	pizza := Pizza{}
+	tomatoPizza := TomatoPizza{pizza: pizza}
+	beefPizza := BeefPizza{pizza: pizza}
+	fmt.Println(pizza.GetPrice())
+	fmt.Println(tomatoPizza.GetPrice())
+	fmt.Println(beefPizza.GetPrice())
 }
